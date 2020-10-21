@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DanceFloor from './components/danceFloor';
+import DanceTile from './components/danceTile';
 
-function App() {
+//Define Floor Size
+const [rowSize, colSize] = [25, 25];
+
+export default function App() {
+  let rows = [];
+  let cols = [];
+  for (let i = 0; i < rowSize; i++) rows.push(i);
+  for (let o = 0; o < colSize; o++) cols.push(o);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DanceFloor row={rowSize} col={colSize}>
+      {rows.map(row => {
+        return cols.map(col => (
+          <DanceTile
+            className="tile"
+            key={`${row} + ${col}`}
+            row={row}
+            col={col}
+          />
+        ));
+      })}
+    </DanceFloor>
   );
 }
-
-export default App;
