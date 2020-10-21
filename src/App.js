@@ -3,7 +3,7 @@ import DanceFloor from './components/danceFloor';
 import DanceTile from './components/danceTile';
 
 //Define Floor Size
-const [rowSize, colSize] = [25, 25];
+const [rowSize, colSize] = [30, 30];
 
 export default function App() {
   let rows = [];
@@ -15,12 +15,7 @@ export default function App() {
     <DanceFloor row={rowSize} col={colSize}>
       {rows.map(row => {
         return cols.map(col => (
-          <DanceTile
-            className="tile"
-            key={`${row} + ${col}`}
-            row={row}
-            col={col}
-          />
+          <DanceTile className="tile" key={`${row} ${col}`} />
         ));
       })}
     </DanceFloor>

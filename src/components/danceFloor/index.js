@@ -1,7 +1,7 @@
 import React from 'react';
 import { Floor } from './styles/danceFloor';
 
-export default function index({ children, ...props }) {
+export default function DanceFloor({ children, ...props }) {
   return (
     <Floor col={props.col} row={props.row}>
       {children}
