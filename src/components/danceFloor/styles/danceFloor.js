@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+//Styling the Floor component
 export const Floor = styled.div`
   display: grid;
   grid-template: repeat(${({ row }) => row}, 20px) / repeat(

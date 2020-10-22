@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+//Styling the Tile component
 export const Tile = styled.div`
   background-color: #1d1d1d;
   box-shadow: 0 0 2px #000;
@@ -15,3 +16,6 @@ export const Tile = styled.div`
       0 0 10px ${({ color }) => color};
   }
 `;
+
+//The ${({color}) => color} syntax means that it will destructure "color" from the props
+//passed to it and return "color"

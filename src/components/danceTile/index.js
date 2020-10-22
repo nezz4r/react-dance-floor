@@ -26,5 +26,5 @@ export default function DanceTile() {
 //Gets random color
 let color;
 function getRandomColor() {
-  color = colors[Math.floor(Math.random() * colors.length)]; //fazendo o sorteio de cores aleatórias dentro do array
+  color = colors[Math.floor(Math.random() * colors.length)];
 }

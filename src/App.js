@@ -3,9 +3,10 @@ import DanceFloor from './components/danceFloor';
 import DanceTile from './components/danceTile';
 
 //Define Floor Size
-const [rowSize, colSize] = [30, 30];
+const [rowSize, colSize] = [40, 40];
 
 export default function App() {
+  //Create an array to map later
   let rows = [];
   let cols = [];
   for (let i = 0; i < rowSize; i++) rows.push(i);
@@ -14,9 +15,7 @@ export default function App() {
   return (
     <DanceFloor row={rowSize} col={colSize}>
       {rows.map(row => {
-        return cols.map(col => (
-          <DanceTile className="tile" key={`${row} ${col}`} />
-        ));
+        return cols.map(col => <DanceTile key={`${row} ${col}`} />);
       })}
     </DanceFloor>
   );
